@@ -1,17 +1,20 @@
-"use client"
+"use client";
 
-import { sidebarLinks } from "@/constants";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { SignOutButton, SignedIn, useAuth } from "@clerk/nextjs";
 
-function LeftSidebar() {
-    const router = useRouter();
-    const pathname = usePathname();
-    const {userId} = useAuth;
-    return(
-        <section className='custom-scrollbar leftsidebar'>
+import { sidebarLinks } from "@/constants";
+
+const LeftSidebar = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const { userId } = useAuth();
+
+  return (
+    <section className='custom-scrollbar leftsidebar'>
       <div className='flex w-full flex-1 flex-col gap-6 px-6'>
         {sidebarLinks.map((link) => {
           const isActive =
@@ -56,7 +59,7 @@ function LeftSidebar() {
         </SignedIn>
       </div>
     </section>
-    )
-}
+  );
+};
 
 export default LeftSidebar;
