@@ -6,7 +6,7 @@ export const metadata={
     title: 'Threads2.0',
     description: 'Threads Clone using Next.js 13',
 }
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 export default function RootLayout({
     children,
 }: {
@@ -22,4 +22,3 @@ export default function RootLayout({
         </ClerkProvider>
     )
 }
-  
